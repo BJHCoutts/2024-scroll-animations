@@ -14,10 +14,6 @@ h1 {
 	margin-bottom: 3.5em;
 }
 
-h2 {
-	margin-bottom: 2em;
-}
-
 header {
 	position: fixed;
 	top: 0;
@@ -35,20 +31,17 @@ article {
 
 	img {
 		display: block;
-		margin-bottom: 1.4em;
+		margin-bottom: 2em;
 		animation: fade-in linear forwards;
 		opacity: 0;
 		scale: 0.8;
+		translate: 0 100px;
 		animation-timeline: view();
 		animation-range: 0px 300px;
 	}
 
-	h1 {
-		margin-bottom: 0.5em;
-	}
-
 	h2 {
-		margin-bottom: 0.5em;
+		margin-bottom: 2.25em;
 	}
 
 	p {
@@ -99,5 +92,6 @@ main {
 	to {
 		scale: 1;
 		opacity: 1;
+		translate: 0 0;
 	}
 }
