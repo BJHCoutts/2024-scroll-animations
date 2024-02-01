@@ -27,17 +27,20 @@ article {
 	img {
 		display: block;
 		margin-bottom: 2em;
-		animation: fade-in linear forwards;
+		animation: article-img-fade-in linear forwards;
 		opacity: 0;
 		scale: 0.8;
 		translate: 0 100px;
 		animation-timeline: view();
 		animation-range: 0px 350px;
-		/* entry value also very useful */
+		/* entry value also very useful for animation range*/
 	}
 
 	h2 {
 		margin-bottom: 2.25em;
+		animation: fade-out linear;
+		animation-timeline: view();
+		animation-range: exit -200px;
 	}
 
 	p {
@@ -78,7 +81,7 @@ main {
 			height: 50%;
 			aspect-ratio: 1 / 1;
 			border-radius: 50%;
-			/* it looks at the scroll of the nearest ancestor/parent element */
+			/* it looks at the scroll of the nearest ancestor/parent element, use 'root' for the document */
 			animation: bg-shift linear;
 			animation-timeline: scroll(x);
 		}
@@ -114,10 +117,10 @@ main {
 	}
 }
 
-@keyframes fade-in {
-	/* from {
-		scale: 0.8;
-		opacity: 0;
+@keyframes article-img-fade-in {
+	/* from { */
+	/* scale: 0.8; */
+	/* opacity: 0;
 	} */
 	to {
 		scale: 1;
@@ -129,5 +132,20 @@ main {
 @keyframes scroll-watcher {
 	to {
 		scale: 1 1;
+	}
+}
+
+@keyframes fade-out {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes header-image-animation {
+	25% {
+		opacity: 1;
+	}
+	85% {
+		opacity: 0;
 	}
 }
