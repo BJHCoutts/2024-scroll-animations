@@ -64,6 +64,7 @@ main {
 	background-color: #3d213d;
 	z-index: 1;
 	align-items: center;
+
 	ul {
 		display: flex;
 		align-items: center;
@@ -77,7 +78,9 @@ main {
 			height: 50%;
 			aspect-ratio: 1 / 1;
 			border-radius: 50%;
-			background-color: whitesmoke;
+			/* it looks at the scroll of the nearest ancestor/parent element */
+			animation: bg-shift linear;
+			animation-timeline: scroll(x);
 		}
 	}
 }
@@ -102,9 +105,12 @@ main {
 	background-color: lightgrey;
 }
 
-@keyframes scroll-watcher {
+@keyframes bg-shift {
+	from {
+		background-color: red;
+	}
 	to {
-		scale: 1 1;
+		background-color: blue;
 	}
 }
 
@@ -117,5 +123,11 @@ main {
 		scale: 1;
 		opacity: 1;
 		translate: 0 0;
+	}
+}
+
+@keyframes scroll-watcher {
+	to {
+		scale: 1 1;
 	}
 }
