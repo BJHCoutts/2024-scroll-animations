@@ -5,17 +5,51 @@
 	font-family: sans-serif;
 }
 
+body {
+	color: whitesmoke;
+	background-color: darkslategrey;
+}
+
+h1 {
+	margin-bottom: 3.5em;
+}
+
+h2 {
+	margin-bottom: 2em;
+}
+
 header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 1;
-	height: 3rem;
+	height: 0;
+	display: none;
+}
+
+article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 5em;
+
+	img {
+		display: block;
+		margin-bottom: 1.4em;
+	}
+
+	p {
+		max-width: 500px;
+		line-height: 1.75em;
+	}
 }
 
 main {
 	height: 300vh;
+	padding-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .scroll-watcher {
@@ -25,7 +59,7 @@ main {
 	scale: 0 1;
 	transform-origin: left;
 	animation: scroll-watcher linear;
-	animation-timeline: scroll();
+	animation-timeline: scroll(y);
 }
 
 .scroll-watcher-container {
@@ -34,7 +68,6 @@ main {
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 1;
 	background-color: lightgrey;
 }
 
