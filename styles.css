@@ -36,6 +36,19 @@ article {
 	img {
 		display: block;
 		margin-bottom: 1.4em;
+		animation: fade-in linear forwards;
+		opacity: 0;
+		scale: 0.8;
+		animation-timeline: view();
+		animation-range: 0px 300px;
+	}
+
+	h1 {
+		margin-bottom: 0.5em;
+	}
+
+	h2 {
+		margin-bottom: 0.5em;
 	}
 
 	p {
@@ -46,7 +59,7 @@ article {
 
 main {
 	height: 300vh;
-	padding-top: 2rem;
+	padding-top: 5rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -65,6 +78,7 @@ main {
 .scroll-watcher-container {
 	height: 15px;
 	position: sticky;
+	z-index: 1;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -74,5 +88,16 @@ main {
 @keyframes scroll-watcher {
 	to {
 		scale: 1 1;
+	}
+}
+
+@keyframes fade-in {
+	/* from {
+		scale: 0.8;
+		opacity: 0;
+	} */
+	to {
+		scale: 1;
+		opacity: 1;
 	}
 }
