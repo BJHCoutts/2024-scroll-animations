@@ -14,13 +14,8 @@ h1 {
 	margin-bottom: 3.5em;
 }
 
-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 0;
-	display: none;
+@media (prefers-reduced-motion: no-preference) {
+	/* add animations in here for UX for people with reduced motion */
 }
 
 article {
@@ -37,7 +32,8 @@ article {
 		scale: 0.8;
 		translate: 0 100px;
 		animation-timeline: view();
-		animation-range: 0px 300px;
+		animation-range: 0px 350px;
+		/* entry value also very useful */
 	}
 
 	h2 {
@@ -56,6 +52,34 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.middle-bar {
+	display: flex;
+	position: fixed;
+	top: 50%;
+	left: 0;
+	right: 0;
+	height: 80px;
+	background-color: #3d213d;
+	z-index: 1;
+	align-items: center;
+	ul {
+		display: flex;
+		align-items: center;
+		display: flex;
+		width: 100%;
+		gap: 20px;
+		height: 100%;
+		overflow: scroll;
+		list-style-type: none;
+		li {
+			height: 50%;
+			aspect-ratio: 1 / 1;
+			border-radius: 50%;
+			background-color: whitesmoke;
+		}
+	}
 }
 
 .scroll-watcher {
